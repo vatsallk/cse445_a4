@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- #1 wrong root name -->
+<!-- HotelsErrors.xml : intentionally contains 5 validation issues -->
+<!-- 1️⃣ Root tag name mismatch -->
 <Hotel>
+  <!-- 2️⃣ Missing required Name element -->
   <Hotel Rating="4.2">
-    <!-- #2 remove required Name element entirely -->
     <!-- <Name>Westin</Name> -->
-    <Phone>480-968-8885</Phone> <!-- #3 This one has Phone, but break another hotel below -->
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
     <Address NearestAirport="Sky Harbor">
-      <Number>11</Number><Street>E 7th St</Street><City>Tempe</City><State>AZ</State><Zip>85281</Zip>
+      <Number>11</Number>
+      <Street>E 7th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
     </Address>
   </Hotel>
 
+  <!-- 3️⃣ Duplicate Name elements -->
   <Hotel>
-    <!-- #5 duplicate names -->
     <Name>Hyatt Place Tempe</Name>
     <Name>Hyatt Place Tempe (Duplicate)</Name>
-    <!-- #3 Missing a Phone element on this hotel -->
-    <!-- #4 Break the Address closing tag -->
+
+    <!-- 4️⃣ Missing Phone element (schema requires ≥1) -->
+
+    <!-- 5️⃣ Unclosed Address tag (well-formed syntactically, but schema-invalid) -->
     <Address>
-      <Number>601</Number><Street>S Ash Ave</Street><City>Tempe</City><State>AZ</State><Zip>85281</Zip>
-    <!-- </Address>  <-- intentionally NOT closed -->
+      <Number>601</Number>
+      <Street>S Ash Ave</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
   </Hotel>
+
+  <!-- explanatory comment (no double-hyphen inside!) -->
+  <!-- intentionally leaving structure issues for validation -->
 </Hotel>
