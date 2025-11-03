@@ -18,6 +18,6 @@
     <!-- #4 Break the Address closing tag -->
     <Address>
       <Number>601</Number><Street>S Ash Ave</Street><City>Tempe</City><State>AZ</State><Zip>85281</Zip>
-    <!-- </Address>  <-- intentionally NOT closed -->
+    <!-- intentionally not closing the Address tag -->
   </Hotel>
 </Hotel>
